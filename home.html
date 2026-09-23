@@ -530,7 +530,7 @@
 
                     <!-- INNER SCREEN VIDEO CONTAINER (UNIFORM SURROUNDING BORDERS) -->
           <div class="sec8-video-screen-clip" id="sec8-video-container">
-            <iframe id="sec8-demo-video" class="sec8-demo-video" src="https://www.youtube.com/embed/of84nr4HCCc?rel=0&modestbranding=1&vq=hd1080" title="지구저구 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe id="sec8-demo-video" class="sec8-demo-video" src="https://www.youtube.com/embed/of84nr4HCCc?rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" title="지구저구 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             
             <a href="https://www.youtube.com/watch?v=of84nr4HCCc" target="_blank" class="sec8-mobile-video-thumb">
               <img src="https://img.youtube.com/vi/of84nr4HCCc/maxresdefault.jpg" alt="유튜브에서 시연 영상 보기">
@@ -688,15 +688,70 @@
   </div>
 
   <script src="merged-script.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     (function() {
-      let idleTimer;
-      const idleTime = 20000; // 20 seconds
+      // 새로고침 시 스크롤 위치 복원을 방지하고 항상 맨 위에서 시작하도록 설정
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
 
-      function resetTimer() {
+      let idleTimer;
+      let reloadInterval;
+      let isAutoScrolling = false;
+      const idleTime = 20000; // 20 seconds
+      let isVideoPlaying = false;
+
+      // 유튜브 플레이어 설정 (영상이 재생 중인지 확인)
+      let ytPlayer;
+      window.onYouTubeIframeAPIReady = function() {
+        ytPlayer = new YT.Player('sec8-demo-video', {
+          events: {
+            'onStateChange': function(event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                isVideoPlaying = true;
+                clearTimeout(idleTimer); // 영상 재생 중이면 타이머 정지
+              } else {
+                isVideoPlaying = false;
+                resetTimer(); // 일시정지 또는 종료 시 타이머 재시작
+              }
+            }
+          }
+        });
+      };
+
+      function resetTimer(e) {
+        // 자동 스크롤이 진행 중일 때
+        if (isAutoScrolling) {
+          // 브라우저의 부드러운 스크롤로 인한 이벤트는 무시
+          if (e && e.type === 'scroll') return;
+          
+          // 사용자가 직접 화면을 터치하거나 클릭하면 자동 스크롤/새로고침을 즉시 취소
+          isAutoScrolling = false;
+          clearInterval(reloadInterval);
+        }
+
         clearTimeout(idleTimer);
+        clearInterval(reloadInterval);
+        
+        // 영상이 재생 중일 때는 20초가 지나도 올라가지 않음
+        if (isVideoPlaying) return;
+
         idleTimer = setTimeout(function() {
+          isAutoScrolling = true;
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          
+          let maxWait = 50; // 최대 5초 대기 (50 * 100ms)
+          reloadInterval = setInterval(function() {
+            // 스크롤이 맨 위에 도달했거나 5초가 경과한 경우
+            if (window.scrollY <= 1 || maxWait <= 0) {
+              clearInterval(reloadInterval);
+              isAutoScrolling = false;
+              window.scrollTo(0, 0); // 오차 방지용 강제 맨위 고정
+              window.location.reload();
+            }
+            maxWait--;
+          }, 100);
         }, idleTime);
       }
 
