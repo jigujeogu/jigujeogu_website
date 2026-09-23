@@ -2504,15 +2504,7 @@ html, body {
 /* ===================================================================
    PAGE 1 SPECIFIC HEIGHT OVERRIDES (Auto-fit Content)
    =================================================================== */
-.page1-body .ipad-device-container {
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-}
 
-.page1-body .ipad-screen-body {
-  min-height: 0 !important;
-}
 
 .page1-body .top-title-overlay {
   padding-top: 15px !important;
@@ -2540,10 +2532,7 @@ html, body {
   max-width: 950px !important;
 }
 
-.page1-body .central-graphics-section {
-  margin-top: 255px !important;
-  flex: none !important;
-}
+
 /* --- Initial States for Scroll Animations (added at bottom) --- */
 .decor-dashed-line { clip-path: inset(0 100% 0 0); }
 .decor-airplane { opacity: 0; }
