@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="manifest" href="manifest.json">
+  <title>JIGU JEOGU | 지구를 위한 저속 구매</title>
+  <meta name="description" content="지구를 위한 저속 구매, JIGU JEOGU. 브랜드 홈페이지 전체 스크롤 페이지.">
+  <!-- Preload Pretendard Fonts -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Override body.pageX-body selectors to work as wrapper classes in merged page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+    }
+
+    /* Page 1 overrides - originally body.page1-body .xxx */
+    .page1-body .ipad-device-container {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+    .page1-body .ipad-screen-body {
+      min-height: 0 !important;
+    }
+    .page1-body .top-title-overlay {
+      padding-top: 15px !important;
+      top: 0px !important;
+      gap: 30px !important;
+    }
+    .page1-body .header-logo-img {
+      transform: translateY(0px) !important;
+    }
+    .page1-body .sub-title-text {
+      font-size: clamp(2.5rem, 5.0vw, 4.0rem) !important;
+      margin-bottom: 30px !important;
+      font-weight: 800 !important;
+      transform: translateY(35px) !important;
+    }
+    .page1-body .main-title-text {
+      font-size: clamp(4.3rem, 11.0vw, 9.5rem) !important;
+      margin-top: -10px !important;
+    }
+    .page1-body .props-illustration-wrapper {
+      max-width: 950px !important;
+    }
+    .page1-body .central-graphics-section {
+      margin-top: 255px !important;
+      flex: none !important;
+    }
+
+    /* Each page section wrapper */
+    .page-section {
+      width: 100%;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="page-section page1-body" id="page-section-1">
+
+  <!-- iPad 12.9-inch Landscape Primary Container -->
+  <main class="ipad-device-container" id="ipad-container-1">
+    <div class="ipad-screen-body">
+
+      <!-- OVERLAY TITLE GROUP (OUT OF NORMAL FLOW) -->
+      <div class="top-title-overlay">
+        <!-- 1. HEADER SECTION -->
+        <header class="ipad-header">
+          <div class="header-logo-container">
+            <img src="assets/1-logo.svg" alt="지구저구 로고" class="header-logo-img">
+          </div>
+        </header>
+
+        <!-- 2. MAIN TITLE SECTION (CENTERED IN UPPER WHITE SPACE ABOVE MAIN GRAPHIC) -->
+        <section class="main-title-section">
+          <p class="sub-title-text">지구를 위한<br class="mobile-br">저속 구매</p>
+          <h1 class="main-title-text">JIGU JEOGU</h1>
+        </section>
+      </div>
+
+      <!-- SPACER TO KEEP GRAPHIC AT BOTTOM -->
+      <div class="top-spacer" style="display: none;"></div>
+
+      <!-- 3. CENTRAL GRAPHICS SECTION (WHITE BACKGROUND & PERFECT STROKE OVERLAP AT BOTTOM) -->
+      <section class="central-graphics-section">
+        <div class="props-illustration-wrapper">
+          <!-- Main Props Illustration -->
+          <img src="assets/1-props.svg" alt="지구저구 소품 일러스트" class="props-svg-img">
+
+          <!-- Jeogu Mascot positioned with pupil tracking -->
+          <div class="jeogu-gap-mascot">
+            <svg width="309" height="136" viewBox="0 0 309 136" fill="none" xmlns="http://www.w3.org/2000/svg" class="jeogu-mascot-svg" id="jeogu-hero-svg">
+              <!-- Jeogu Artwork Replaced from updated assets/1-jeogu.svg -->
+              <path d="M303.774 91.9628V125.022C303.774 128.153 301.237 130.69 298.106 130.69H8.66248C5.53654 130.69 3 128.153 3 125.022V91.9628C3 88.8368 5.53654 86.3003 8.66248 86.3003H298.106C301.237 86.3003 303.774 88.8368 303.774 91.9628Z" fill="#0F1811"/>
+              <path d="M286.571 116.147C286.571 121.073 286.202 125.925 285.481 130.682H21.2925C20.5715 125.925 20.2031 121.073 20.2031 116.147C20.2031 106.253 21.6977 96.6545 24.5079 87.5082C24.6342 87.103 24.7605 86.6978 24.892 86.2926C35.4329 53.4439 62.9663 26.5472 98.9672 12.8384C99.6093 12.5963 100.257 12.3542 100.909 12.1174C117.012 6.24442 134.752 2.99219 153.387 2.99219C155.06 2.99219 156.729 3.0185 158.386 3.07112C158.949 3.08691 159.507 3.10797 160.07 3.13429C175.032 3.76053 189.34 6.4865 202.607 10.9702C203.07 11.128 203.528 11.2859 203.986 11.4438C219.716 16.9379 233.94 24.9158 245.97 34.7989C246.276 35.0515 246.581 35.3041 246.886 35.5567C263.358 49.3602 275.619 66.7739 281.877 86.2926C282.013 86.6978 282.14 87.103 282.266 87.5082C285.076 96.6545 286.571 106.253 286.571 116.147Z" fill="#0F1811"/>
+              <path d="M158.395 3.07112L143.365 34.5147L142.223 36.9039L136.529 48.8235L132.056 58.1802L118.621 86.2926L97.4075 130.682H42.6562L63.8747 86.2926L98.9757 12.8384C99.6177 12.5963 100.265 12.3542 100.918 12.1174C117.021 6.24442 134.761 2.99219 153.395 2.99219C155.069 2.99219 156.737 3.0185 158.395 3.07112Z" fill="#35D047"/>
+              <path d="M245.976 34.7974L221.363 86.2912L200.15 130.681H145.398L166.617 86.2912L181.157 55.8686L187.599 42.386L202.613 10.9688C203.076 11.1266 203.533 11.2845 203.991 11.4424C219.721 16.9364 233.946 24.9144 245.976 34.7974Z" fill="#35D047"/>
+              <path d="M173.648 18.5479C186.649 18.5479 197.187 29.0865 197.188 42.0869C197.188 55.0875 186.649 65.6269 173.648 65.627C164.83 65.627 157.149 60.7746 153.119 53.5977C149.09 60.7745 141.408 65.627 132.59 65.627C119.589 65.6268 109.051 55.0874 109.051 42.0869C109.051 29.0866 119.59 18.5481 132.59 18.5479C141.408 18.5479 149.089 23.3991 153.119 30.5752C157.149 23.399 164.831 18.5479 173.648 18.5479Z" fill="white" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Left Pupil -->
+              <path d="M140.378 47.6025C143.424 47.6025 145.894 45.1333 145.894 42.0874C145.894 39.0415 143.424 36.5723 140.378 36.5723C137.332 36.5723 134.863 39.0415 134.863 42.0874C134.863 45.1333 137.332 47.6025 140.378 47.6025Z" fill="black" class="jeogu-pupil left-pupil"/>
+              <!-- Right Pupil -->
+              <path d="M166.394 47.6025C169.44 47.6025 171.909 45.1333 171.909 42.0874C171.909 39.0415 169.44 36.5723 166.394 36.5723C163.348 36.5723 160.879 39.0415 160.879 42.0874C160.879 45.1333 163.348 47.6025 166.394 47.6025Z" fill="black" class="jeogu-pupil right-pupil"/>
+              <path d="M153.387 1.5C155.074 1.5 156.756 1.52708 158.428 1.58008C159.001 1.59614 159.569 1.61682 160.141 1.64355L160.14 1.64453C174.768 2.25745 188.784 4.85847 201.828 9.1377L203.088 9.55664L203.092 9.55859C203.557 9.71733 204.018 9.87558 204.475 10.0332L204.48 10.0352C219.874 15.4117 233.851 23.1468 245.775 32.7158L246.923 33.6475L246.927 33.6514L247.843 34.4092L247.85 34.415C264.222 48.1356 276.514 65.4075 282.965 84.8008H298.106C302.065 84.8009 305.274 88.0077 305.274 91.9629V125.022C305.274 128.982 302.066 132.189 298.106 132.189H8.66211C4.70715 132.189 1.50024 128.981 1.5 125.022V91.9629C1.5 88.0086 4.70791 84.801 8.66211 84.8008H23.8076C34.7522 51.9268 62.4567 25.1441 98.4336 11.4443L98.4385 11.4424C99.0825 11.1996 99.7364 10.9548 100.397 10.7148C116.665 4.78211 134.579 1.50003 153.387 1.5Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. BOTTOM RECTANGLE WITH BUTTONS (#35D047 + PERFECT 4px STROKE OVERLAP) -->
+      <footer class="bottom-green-rectangle">
+        <div class="nav-buttons-group">
+          <button class="nav-round-btn btn-download-1" id="btn-download-1">BRANDSTORY</button>
+          <button class="nav-round-btn btn-extension" id="btn-extension">EXTENSION FUNCTION</button>
+          <button class="nav-round-btn btn-download-2" id="btn-download-2">DOWNLOAD</button>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="page-section page2-body" id="page-section-2">
+
+  <!-- iPad 12.9-inch Landscape Container (Same Aspect Ratio & Canvas Size as Page 1) -->
+  <main class="ipad-device-container page2-container" id="ipad-container-2">
+    <div class="ipad-screen-body page2-screen-body">
+
+      <!-- TOP PORTION: PURE BLACK BACKGROUND WITH HEADLINE & EARTH GRAPHICS -->
+      <section class="sec2-top-dark-section">
+        
+        <!-- HEADLINE TEXT AREA ABOVE EARTH -->
+        <div class="sec2-headline-container">
+          <p class="sec2-sub-headline desktop-only">지구의 수명을 갉아먹는 과량 폐기물 배출</p>
+          <p class="sec2-sub-headline mobile-only" style="display: none;">지구의 수명을<br class="mobile-br">갉아먹는<br class="mobile-br">과량 폐기물 배출</p>
+          
+          <!-- Bottom line with 2-line.svg highlight drag background -->
+          <div class="sec2-highlight-text-wrapper desktop-only">
+            <img src="assets/2-line.svg" alt="텍스트 하이라이트 밑줄" class="sec2-underline-img">
+            <span class="sec2-main-headline-text">충동구매를 줄이면 지구의 수명은 늘어나요!</span>
+          </div>
+          
+          <div class="sec2-highlight-text-wrapper-mobile mobile-only" style="display: none;">
+            <div class="sec2-highlight-line-wrapper">
+              <img src="assets/2-line2.svg" alt="밑줄 1" class="sec2-underline-img-mobile underline-top">
+              <span class="sec2-main-headline-text-mobile">충동구매를 줄이면</span>
+            </div>
+            <div class="sec2-highlight-line-wrapper">
+              <img src="assets/2-line3.svg" alt="밑줄 2" class="sec2-underline-img-mobile underline-bottom">
+              <span class="sec2-main-headline-text-mobile">지구의 수명은 늘어나요!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTRAL GRAPHICS: EARTH & CORNER TRASH PILES & SWEAT DROPS -->
+        <div class="sec2-graphics-wrapper">
+          <div class="sec2-graphics-inner-group">
+          
+          <!-- Left Trash Pile (2-trash2.svg) - Corner Edge-to-Edge Placement -->
+          <img src="assets/2-trash2.svg" alt="쓰레기더미 2" class="trash-pile-left">
+
+          <!-- Center Earth (2-earth1.svg Inline with Sweat Drops & Pupil Tracking) -->
+          <div class="sec2-earth-container">
+            <!-- 2-earth1.svg Inline -->
+            <svg width="653" height="653" viewBox="0 0 653 653" fill="none" xmlns="http://www.w3.org/2000/svg" class="sec2-earth-svg" id="sec2-earth-svg">
+              <path d="M326.285 2C505.382 2.00008 650.57 147.188 650.57 326.285C650.57 370.821 641.575 413.264 625.321 451.904C576.238 568.61 460.838 650.562 326.285 650.562C196.461 650.562 84.5124 574.247 32.7109 464.065C13.0448 422.245 2.00002 375.559 2 326.285C2 209.755 63.4978 107.631 155.768 50.4561V50.4551C184.941 32.3835 217.192 18.8584 251.555 10.748H251.556C275.556 5.08686 300.549 2 326.285 2Z" fill="#85CCF2" stroke="#0F1811" stroke-width="4"/>
+              <path d="M251.798 101.144C276.684 134.597 331.18 141.287 345.946 180.28C354.608 203.161 345.708 228.476 344.218 252.894C340.786 309.213 378.734 361.578 426.556 391.528C474.379 421.479 531.007 433.328 586.288 444.653C598.351 447.126 610.929 449.409 623.626 451.128C639.778 412.729 648.718 370.549 648.718 326.285C648.71 148.293 504.417 4 326.425 4C300.849 4 276.01 7.06719 252.155 12.6943C235.194 40.9965 230.637 72.6988 251.798 101.144Z" fill="#49B234"/>
+              <path d="M130.57 387.336C138.852 377.374 147.134 367.403 155.416 357.441C166.552 344.047 178.4 328.085 175.135 310.973C170.253 285.374 135.61 275.887 126.702 251.389C117.255 225.433 140.587 200.562 155.083 177.047C178.099 139.71 176.53 91.0865 156.938 52.1641C65.2391 108.982 4.11719 210.477 4.11719 326.285C4.11719 375.258 15.0941 421.654 34.6385 463.215C54.0879 456.233 72.3484 445.969 88.1519 432.646C103.995 419.292 117.326 403.274 130.57 387.336Z" fill="#49B234"/>
+              <path d="M453.715 444.303C442.311 434.967 428.734 440.531 415.903 442.98C413.588 443.424 411.25 443.749 408.904 443.947C401.446 444.589 393.893 444.034 386.61 442.338C377.987 440.333 370.774 434.571 362.397 432.724C358.26 431.813 354.147 431.781 350.025 432.796C339.191 435.443 329.712 443.313 321.057 449.931C316.825 453.164 313.219 457.412 311.523 462.461C308.448 471.615 312.22 481.958 318.616 489.194C328.507 500.393 343.669 506.575 356.564 513.557C372.106 521.974 387.648 530.391 403.19 538.816C420.333 548.097 438.554 561.372 459.144 559.137C476.153 557.29 490.561 543.151 494.595 526.523C501.396 498.514 481.368 479.12 466.032 458.752C462.22 453.687 458.629 448.33 453.723 444.311L453.715 444.303Z" fill="#49B234"/>
+              <path d="M326.285 2C505.382 2.00008 650.57 147.188 650.57 326.285C650.57 370.821 641.575 413.264 625.321 451.904C576.238 568.61 460.838 650.562 326.285 650.562C196.461 650.562 84.5124 574.247 32.7109 464.065C13.0448 422.245 2.00002 375.559 2 326.285C2 209.755 63.4978 107.631 155.768 50.4561V50.4551C184.941 32.3835 217.192 18.8584 251.555 10.748H251.556C275.556 5.08686 300.549 2 326.285 2Z" fill="url(#paint0_linear_2189_1593)" stroke="#0F1811" stroke-width="4"/>
+              <path d="M344.722 185.735C345.47 185.393 346.36 185.543 346.955 186.128C355.803 194.835 375.747 211.705 409.656 218.017C410.514 218.177 411.169 218.874 411.275 219.74C411.491 221.497 411.599 223.283 411.599 225.088C411.599 249.952 391.443 270.108 366.579 270.108C349.095 270.108 333.959 260.145 326.506 245.593C319.044 260.144 303.911 270.108 286.426 270.108C261.562 270.108 241.406 249.952 241.406 225.088C241.406 223.284 241.514 221.497 241.729 219.74L241.755 219.58C241.917 218.789 242.544 218.167 243.348 218.017C277.247 211.705 297.192 194.835 306.051 186.127L306.174 186.017C306.806 185.491 307.704 185.402 308.432 185.81C316.152 190.139 322.455 196.684 326.506 204.584C330.551 196.684 336.854 190.139 344.574 185.81L344.722 185.735Z" fill="white" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Left Pupil -->
+              <path d="M301.652 234.654C307.597 234.654 312.418 229.834 312.418 223.889C312.418 217.943 307.597 213.124 301.652 213.124C295.706 213.124 290.887 217.943 290.887 223.889C290.887 229.834 295.706 234.654 301.652 234.654Z" fill="black" class="earth-pupil left-pupil"/>
+              <!-- Right Pupil -->
+              <path d="M352.425 234.654C358.371 234.654 363.19 229.834 363.19 223.889C363.19 217.943 358.371 213.124 352.425 213.124C346.48 213.124 341.66 217.943 341.66 223.889C341.66 229.834 346.48 234.654 352.425 234.654Z" fill="black" class="earth-pupil right-pupil"/>
+              <defs>
+                <linearGradient id="paint0_linear_2189_1593" x1="326.285" y1="342.81" x2="326.285" y2="757.276" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF0000" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#FF0000"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <!-- 1 Sweat Drop on Left -->
+            <img src="assets/2-earth-sweat.svg" alt="지구 땀 1" class="sweat-drop sweat-left-1">
+
+            <!-- 3 Sweat Drops on Right (Added 1 extra sweat drop on right) -->
+            <img src="assets/2-earth-sweat.svg" alt="지구 땀 2" class="sweat-drop sweat-right-1">
+            <img src="assets/2-earth-sweat.svg" alt="지구 땀 3" class="sweat-drop sweat-right-2">
+            <img src="assets/2-earth-sweat.svg" alt="지구 땀 4" class="sweat-drop sweat-right-3">
+          </div>
+
+          <!-- Right Trash Pile (2-trash1.svg) - Pulled Further Down Boldly -->
+          <img src="assets/2-trash1.svg" alt="쓰레기더미 1" class="trash-pile-right">
+
+          </div>
+        </div>
+
+        <!-- WHITE RECTANGLE CARD OVERLAY ON TOP OF GRAPHICS -->
+        <div class="sec2-info-card-overlay">
+          <p class="sec2-info-line">저희는 불필요한 폐기물을 발생시키는 소비 문제에 주목했어요.</p>
+          <p class="sec2-info-line">그리고 이러한 문제에 근본적 원인을</p>
+          <p class="sec2-info-line">
+            <span class="highlight-green-box">과소비를 부추기는 이커머스 시장</span>에서 찾았어요.
+          </p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <div class="page-section page3-body" id="page-section-3">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page3-container" id="ipad-container-3">
+    <div class="ipad-screen-body page3-screen-body">
+
+      <!-- TOP HEADLINE -->
+      <section class="sec3-top-section">
+        <h1 class="sec3-main-title">무엇이 문제일까요?</h1>
+      </section>
+
+      <!-- HERO IMAGE SECTION (USING 3-img.svg DIRECTLY WITHOUT DOUBLE BORDER OR DOUBLE TAPES) -->
+      <section class="sec3-image-section">
+        <div class="sec3-image-wrapper">
+          <img src="assets/3-img.svg" alt="폐기물 산 이미지" class="sec3-hero-img">
+        </div>
+      </section>
+
+      <!-- 3 PROBLEM CARDS ROW -->
+      <section class="sec3-cards-section">
+        <div class="sec3-cards-container">
+
+          <!-- Card 1 -->
+          <div class="problem-card card-1">
+            <div class="card-number-badge">1</div>
+            <div class="card-header-green">
+              <h2 class="card-title">쇼핑몰의 다크패턴</h2>
+            </div>
+            <div class="card-body-white">
+              <p class="card-content">소비자의 비이성적인 소비를 부추기는 자극적인 마케팅과 다크패턴</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="problem-card card-2">
+            <div class="card-number-badge">2</div>
+            <div class="card-header-green">
+              <h2 class="card-title">소비자의 충동구매</h2>
+            </div>
+            <div class="card-body-white">
+              <p class="card-content">기업의 심리 조작을 이겨내지 못한 개인은 불필요한 과소비를 유발</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="problem-card card-3">
+            <div class="card-number-badge">3</div>
+            <div class="card-header-green">
+              <h2 class="card-title">폐기물과 탄소 발생</h2>
+            </div>
+            <div class="card-body-white">
+              <p class="card-content">충동구매로 인해 생긴 과한 폐기물 발생 및 운송 과정 및 상품 제조 과정에서의 탄소 발자국</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- DECORATIVE SVGS BELOW CARDS (SLIGHTLY OVERLAPPING BOTTOM OF CARDS) -->
+        <div class="sec3-decorations-row">
+          <img src="assets/3-person.svg" alt="쇼핑하는 사람" class="decor-person">
+          <img src="assets/3-dots.svg" alt="연결 점선" class="decor-dashed-line">
+          <img src="assets/3-plane.svg" alt="탄소 비행기" class="decor-airplane">
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 4 ==================== -->
+  <div class="page-section page4-body" id="page-section-4">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page4-container" id="ipad-container-4">
+    <div class="ipad-screen-body page4-screen-body">
+
+      <!-- TOP HEADLINE & SUB-HEADLINE -->
+      <section class="sec4-top-section">
+        <h1 class="sec4-main-title">지구저구는 이러한 가치를 창출합니다</h1>
+        <p class="sec4-sub-title">SDGs 12: 책임감 있는 소비와 생산</p>
+      </section>
+
+      <!-- INTERACTIVE VALUE CARDS STACK SECTION -->
+      <section class="sec4-cards-section">
+        
+        <!-- CARD STACK CONTAINER (CLICKABLE ANYWHERE TO FLIP CARDS) -->
+        <div class="sec4-card-deck" id="value-card-deck" title="클릭하여 다음 가치 카드로 넘기기">
+          <!-- Card 1: Yellow (4-value1.svg) -->
+          <div class="value-card card-yellow active-front" data-index="0">
+            <img src="assets/4-value1.svg" alt="가치 1: 다크패턴과 불필요한 소비 줄이기" class="value-card-img">
+          </div>
+
+          <!-- Card 2: Blue (4-value2.svg) -->
+          <div class="value-card card-blue card-middle" data-index="1">
+            <img src="assets/4-value2.svg" alt="가치 2: 비합리적인 소비로 인한 폐기물 없애기" class="value-card-img">
+          </div>
+
+          <!-- Card 3: Pink (4-value3.svg) -->
+          <div class="value-card card-pink card-back" data-index="2">
+            <img src="assets/4-value3.svg" alt="가치 3: 빠르게 사고 쉽게 버리는 소비 방식 조명" class="value-card-img">
+          </div>
+        </div>
+
+        <!-- VERTICAL INDICATOR DOTS ON THE RIGHT -->
+        <div class="sec4-dots-container" id="sec4-dots-container">
+          <div class="indicator-dot active-dot" data-dot="0" title="가치 1 카드로 이동"></div>
+          <div class="indicator-dot" data-dot="1" title="가치 2 카드로 이동"></div>
+          <div class="indicator-dot" data-dot="2" title="가치 3 카드로 이동"></div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 5 ==================== -->
+  <div class="page-section page5-body" id="page-section-5">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page5-container" id="ipad-container-5">
+    <div class="ipad-screen-body page5-screen-body" id="page5-body">
+
+      <!-- ALL 5 BACKGROUND ICONS DISPLAYED TOGETHER (SAFE ZONES OUTSIDE MAGNIFIER MOTION) -->
+      <div class="page5-bg-icons-wrapper page5-all-icons">
+        <img src="assets/5-icon1-1.svg" alt="아이콘 1-1" class="page5-icon icon-all-1">
+        <img src="assets/5-icon2-1.svg" alt="아이콘 2-1" class="page5-icon icon-all-2">
+        <img src="assets/5-icon2-2.svg" alt="아이콘 2-2" class="page5-icon icon-all-3">
+        <img src="assets/5-icon1-3.svg" alt="아이콘 1-3" class="page5-icon icon-all-4">
+        <img src="assets/5-icon2-3.svg" alt="아이콘 2-3" class="page5-icon icon-all-5">
+      </div>
+
+      <!-- PHASE 1: INITIAL CENTERED TITLE + SUBTEXT -->
+      <div class="page5-center-content page5-phase1-content" id="page5-phase1">
+        <img src="assets/5-logo.svg" alt="지구저구 메인 로고" class="page5-main-logo">
+        <p class="page5-sub-text">지구를 위한 저속 구매</p>
+      </div>
+
+      <!-- PHASE 2: TRANSITIONED TARGET DESCRIPTION CONTENT -->
+      <div class="page5-center-content page5-phase2-content" id="page5-phase2">
+        <img src="assets/5-logo.svg" alt="지구저구 상단 로고" class="page5-lens-logo">
+        <div class="page5-body-text">
+          <p>고물가와 취업난 속에서 초저가 쇼핑몰을<br class="mobile-br"> 이용하는 것은 이제 피할 수 없는<br class="desktop-br"> 선택지가<br class="mobile-br"> 되었습니다. 하지만 저렴한 가격의 이면에는<br class="mobile-br"> 불필요한 과소비를<br class="desktop-br"> 조장하는 다크 패턴의 함정이 존재합니다.</p>
+          <p>저렴한 상품을 구매하기 위해 접속한 사용자들에게<br class="mobile-br"> 오히려 충동소비를 <br class="desktop-br">조장하는<br class="mobile-br"> 해당 쇼핑몰의 함정에 빠져들지 않게 돕는 것,<br class="desktop-br"> <br class="mobile-br">스스로 안전한 쇼핑 환경을 조성하고 그 안에서<br class="mobile-br"> 자신의 의지대로 <br class="desktop-br">행동할 수 있게 돕는 것이<br class="mobile-br"> 지구저구의 목표입니다.</p>
+        </div>
+      </div>
+
+      <!-- OVERLAY MAGNIFYING GLASS -->
+      <div class="page5-magnifier-overlay">
+        <img src="assets/5-glass2-1.svg" alt="돋보기 2-1" class="magnifier-inspecting-img">
+      </div>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 6 ==================== -->
+  <div class="page-section page6-body" id="page-section-6">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page6-container" id="ipad-container-6">
+    <div class="ipad-screen-body page6-screen-body" id="page6-body">
+
+      <!-- 1. BACKGROUND CLOUDS — v2: Overlapping cluster with small sky gaps -->
+      <div class="page6-clouds-layer">
+        <!-- BACK CLOUDS (#e7f8f8) - 2 copies -->
+        <img src="assets/6-cloud1.svg" alt="배경 구름 BACK 1" class="cloud-img cloud-back-1">
+        <img src="assets/6-cloud1.svg" alt="배경 구름 BACK 2" class="cloud-img cloud-back-2">
+        <!-- FRONT CLOUDS (white) - 2 copies -->
+        <img src="assets/6-cloud2.svg" alt="배경 구름 FRONT 1" class="cloud-img cloud-front-1">
+        <img src="assets/6-cloud2.svg" alt="배경 구름 FRONT 2" class="cloud-img cloud-front-2">
+      </div>
+
+      <!-- 2. TRUCK & EXHAUST SMOKE ANIMATION (WHEELS FLUSH TO BOTTOM, Z-INDEX: 20) -->
+      <div class="page6-truck-layer">
+        <div class="truck-assembly">
+          <!-- Exhaust Smoke attached trailing behind the truck -->
+          <div class="smoke-group">
+            <!-- Small grey circle smoke (6-smoke2.svg) placed BEHIND -->
+            <img src="assets/6-smoke2.svg" alt="작은 원형 매연" class="smoke-img smoke-circle-small">
+            <!-- Big puffy cloud smoke (6-smoke1.svg) -->
+            <img src="assets/6-smoke1.svg" alt="트럭 매연 1" class="smoke-img smoke-1">
+            <img src="assets/6-smoke1.svg" alt="트럭 매연 2" class="smoke-img smoke-2">
+          </div>
+          <!-- Truck Body -->
+          <img src="assets/6-truck.svg" alt="트럭" class="truck-img">
+        </div>
+      </div>
+
+      <!-- 3. MAIN CENTER GRAPHIC (6-sign1.svg POLE EXTENDING PAST BOTTOM SCREEN, Z-INDEX: 30) -->
+      <div class="page6-main-graphic-layer">
+        <img src="assets/6-sign1.svg" alt="메인 표지판" class="main-sign-img">
+      </div>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 7 ==================== -->
+  <div class="page-section page7-body" id="page-section-7">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page7-container" id="ipad-container-7">
+    <div class="ipad-screen-body page7-screen-body" id="page7-body">
+
+      <!-- 1. TOP HEADER SECTION (MAIN TITLE + SUBTITLE BOX - STRICTLY TRIMMED HTML) -->
+      <div class="sec7-header-section">
+        <h1 class="sec7-main-title">충동구매 방지턱,<br>이런 기능들이 있어요</h1>
+        <div class="sec7-subtitle-box"><div id="sec7-subtitle-text" class="sec7-subtitle-text">충동구매를 부추기는 다크패턴 문구 마스킹</div></div>
+      </div>
+
+      <!-- 2. MONITOR & MASCOT CONTAINER SECTION -->
+      <div class="sec7-monitor-section">
+
+        <!-- 4-DOT INDICATORS (UNIFORM SIZE & GAP) -->
+        <div class="sec7-dots-container">
+          <button class="sec7-dot active-dot" data-index="0" aria-label="기능 1"></button>
+          <button class="sec7-dot" data-index="1" aria-label="기능 2"></button>
+          <button class="sec7-dot" data-index="2" aria-label="기능 3"></button>
+          <button class="sec7-dot" data-index="3" aria-label="기능 4"></button>
+        </div>
+
+        <!-- PREV BUTTON (LEFT ARROW) -->
+        <button class="sec7-nav-btn btn-prev" id="sec7-prev-btn" aria-label="이전 기능">
+          <img src="assets/7-arrow-l.svg" alt="이전 화살표" class="nav-arrow-img">
+        </button>
+
+        <!-- MAIN MONITOR GRAPHIC WRAPPER (MP4 VIDEO EMBEDDED INSIDE DISPLAY) -->
+        <div class="sec7-monitor-wrapper">
+          <!-- Single Solid Black Monitor Silhouette SVG (7-monitor1.svg) -->
+          <img src="assets/7-monitor1.svg" alt="모니터 실루엣" class="sec7-monitor-img">
+
+          <!-- MP4 VIDEO SCREEN CONTAINER WITH ZOOM CROP CLIP -->
+          <div class="sec7-monitor-screen-clip">
+            <video id="sec7-monitor-video-0" class="sec7-monitor-video active" src="assets/video/07-1-darkpattern-masking.mp4" autoplay loop muted playsinline preload="auto"></video>
+            <video id="sec7-monitor-video-1" class="sec7-monitor-video" src="assets/video/07-2-nudge.mp4" autoplay loop muted playsinline preload="auto"></video>
+            <video id="sec7-monitor-video-2" class="sec7-monitor-video" src="assets/video/07-3-shoppingcart.mp4" autoplay loop muted playsinline preload="auto"></video>
+            <video id="sec7-monitor-video-3" class="sec7-monitor-video" src="assets/video/07-4-blackwhite.mp4" autoplay loop muted playsinline preload="auto"></video>
+          </div>
+        </div>
+
+        <!-- NEXT BUTTON (RIGHT ARROW) -->
+        <button class="sec7-nav-btn btn-next" id="sec7-next-btn" aria-label="다음 기능">
+          <img src="assets/7-arrow-r.svg" alt="다음 화살표" class="nav-arrow-img">
+        </button>
+
+        <!-- 3. SPEECH BUBBLE & TEXT LAYER (CSS-BUILT AUTO-RESIZING BUBBLE) -->
+        <div class="sec7-speech-wrapper">
+          <div class="sec7-speech-bubble">
+            <div class="sec7-speech-text-common sec7-speech-text-hidden" id="sec7-speech-hidden"></div>
+            <div class="sec7-speech-text-common sec7-speech-text" id="sec7-speech-text"></div>
+          </div>
+        </div>
+
+        <!-- 4. JEOGU MASCOT (WITH ENLARGED DYNAMIC MOUSE PUPIL TRACKING) -->
+        <div class="sec7-jeogu-wrapper">
+          <svg id="sec7-jeogu-svg" class="sec7-jeogu-img" width="238" height="103" viewBox="0 0 238 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M236.328 70.843V96.6718C236.328 99.1182 234.346 101.1 231.9 101.1H5.75998C3.31771 101.1 1.33594 99.1182 1.33594 96.6718V70.843C1.33594 68.4007 3.31771 66.4189 5.75998 66.4189H231.9C234.346 66.4189 236.328 68.4007 236.328 70.843Z" fill="#0F1811"/>
+            <path d="M222.892 89.7378C222.892 93.5862 222.604 97.3771 222.041 101.094H15.6323C15.0691 97.3771 14.7812 93.5862 14.7812 89.7378C14.7812 82.0081 15.9489 74.5086 18.1445 67.3627C18.2432 67.0461 18.3419 66.7295 18.4447 66.4129C26.6801 40.7486 48.1918 19.7344 76.3189 9.02378C76.8205 8.83464 77.3263 8.64552 77.8361 8.4605C90.4175 3.872 104.278 1.33105 118.837 1.33105C120.144 1.33105 121.447 1.35161 122.743 1.39273C123.182 1.40506 123.618 1.42152 124.058 1.44207C135.747 1.93135 146.927 4.06113 157.292 7.56418C157.654 7.68753 158.011 7.81087 158.369 7.93422C170.659 12.2267 181.772 18.4598 191.171 26.1813C191.41 26.3787 191.648 26.576 191.887 26.7734C204.756 37.558 214.336 51.1631 219.224 66.4129C219.331 66.7295 219.43 67.0461 219.529 67.3627C221.724 74.5086 222.892 82.0081 222.892 89.7378Z" fill="#0F1811"/>
+            <path d="M122.746 1.39273L111.003 25.9593L110.111 27.8259L105.662 37.1386L102.167 44.449L91.6707 66.4129L75.097 101.094H32.3203L48.8981 66.4129L76.3222 9.02378C76.8238 8.83464 77.3295 8.64552 77.8394 8.4605C90.4207 3.872 104.281 1.33105 118.84 1.33105C120.147 1.33105 121.451 1.35161 122.746 1.39273Z" fill="#35D047"/>
+            <path d="M191.17 26.1806L171.94 66.4122L155.367 101.093H112.59L129.168 66.4122L140.528 42.6433L145.56 32.1095L157.291 7.56348C157.653 7.68682 158.01 7.81017 158.368 7.93351C170.657 12.226 181.771 18.4591 191.17 26.1806Z" fill="#35D047"/>
+            <path d="M134.661 13.3193C144.909 13.3195 153.217 21.6269 153.217 31.875C153.217 42.1233 144.909 50.4315 134.661 50.4316C127.812 50.4316 121.835 46.718 118.622 41.1982C115.409 46.7182 109.431 50.4316 102.582 50.4316C92.3339 50.4314 84.0264 42.1232 84.0264 31.875C84.0266 21.627 92.334 13.3196 102.582 13.3193C109.43 13.3193 115.409 17.0317 118.622 22.5508C121.835 17.0318 127.813 13.3193 134.661 13.3193Z" fill="white" stroke="black" stroke-width="2.67372" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Left Pupil (Enlarged Radius r=5.6) -->
+            <circle class="left-pupil" cx="111.051" cy="26.0286" r="5.6" fill="black"/>
+            <!-- Right Pupil (Enlarged Radius r=5.6) -->
+            <circle class="right-pupil" cx="137.871" cy="26.0286" r="5.6" fill="black"/>
+            <path d="M231.9 66.4188H219.22C214.331 51.169 204.751 37.5639 191.882 26.7792C191.644 26.5819 191.405 26.3845 191.167 26.1872C181.768 18.4657 170.654 12.2325 158.365 7.94008C158.007 7.81673 157.649 7.69338 157.287 7.57004C146.922 4.06699 135.743 1.9372 124.054 1.44792C123.614 1.42736 123.178 1.41092 122.738 1.39858C121.443 1.35747 120.139 1.33691 118.832 1.33691C104.273 1.33691 90.4129 3.87786 77.8315 8.46635C77.3217 8.65137 76.8159 8.8405 76.3143 9.02964C48.1872 19.7402 26.6755 40.7544 18.44 66.4188H5.75998C3.31771 66.4188 1.33594 68.4005 1.33594 70.8428V96.6716C1.33594 99.118 3.31771 101.1 5.75998 101.1H231.9C234.346 101.1 236.328 99.118 236.328 96.6716V70.8428C236.328 68.4005 234.346 66.4188 231.9 66.4188Z" stroke="black" stroke-width="2.67372" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 8 ==================== -->
+  <div class="page-section page8-body" id="page-section-8">
+
+  <!-- iPad 12.9-inch Landscape Container (1366 x 1024) -->
+  <main class="ipad-device-container page8-container" id="ipad-container-8">
+    <div class="ipad-screen-body page8-screen-body" id="page8-body">
+
+      <!-- 1. TOP MAIN TITLE SECTION (PULLED DOWN BOLDLY DOWNWARDS) -->
+      <section class="sec8-top-section">
+        <h1 class="sec8-main-title">충동구매 방지턱,<br>이렇게 작동합니다!</h1>
+      </section>
+
+      <!-- 2. MAIN GRAPHIC & VIDEO STAGE SECTION -->
+      <section class="sec8-graphic-stage">
+        
+        <!-- MAIN CONTAINER FOR 8-main.svg (1812 x 800) -->
+        <div class="sec8-graphic-wrapper">
+
+          <!-- MAIN BACKGROUND UNIFORM RECTANGLE GRAPHIC SVG (assets/8-group1.svg) -->
+          <img src="assets/8-group1.svg" alt="시현 영상 재생 메인 그래픽" class="sec8-main-graphic-img">
+
+                    <!-- INNER SCREEN VIDEO CONTAINER (UNIFORM SURROUNDING BORDERS) -->
+          <div class="sec8-video-screen-clip" id="sec8-video-container">
+            <iframe id="sec8-demo-video" class="sec8-demo-video" src="https://www.youtube.com/embed/of84nr4HCCc?rel=0&modestbranding=1&vq=hd1080" title="지구저구 시연 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+            <a href="https://www.youtube.com/watch?v=of84nr4HCCc" target="_blank" class="sec8-mobile-video-thumb">
+              <img src="https://img.youtube.com/vi/of84nr4HCCc/maxresdefault.jpg" alt="유튜브에서 시연 영상 보기">
+              <div class="sec8-play-overlay"></div>
+            </a>
+            <!-- INNER BLACK STROKE BORDER OVERLAY ON VIDEO -->
+            <div class="sec8-video-inner-stroke" style="pointer-events: none;"></div>
+          </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  </div>
+
+  <!-- ==================== PAGE 9 ==================== -->
+  <div class="page-section page9-10-body" id="page-section-9">
+
+  <!-- iPad 12.9-inch Landscape Combined Container (1366 x 1024) -->
+  <main class="ipad-device-container page9-10-container" id="ipad-container-9">
+    <div class="ipad-screen-body page9-10-screen-body" id="page9-10-screen-body">
+
+      <!-- ===================================================================
+           UPPER SECTION: PAGE 9 (RECEIPT PRINTER INTERACTION & MAGAZINE)
+           =================================================================== -->
+      <section class="combined-sec9-upper">
+        
+        <!-- 1. MAIN TITLE SECTION -->
+        <div class="sec9-top-section">
+          <h1 class="sec9-main-title">지구저구의 소식은<br>여기서 확인하세요!</h1>
+        </div>
+
+        <!-- 2. RECEIPT PRINTER STAGE & INTERACTIVE DISPENSER SECTION -->
+        <div class="sec9-receipt-stage">
+          
+          <!-- RECEIPT PRINTER SLOT (9-receipt-top2.svg) -->
+          <div class="sec9-printer-slot-wrapper" id="sec9-printer-slot" title="클릭시 영수증 다시 당겨오기">
+            <img src="assets/9-receipt-top2.svg" alt="영수증 출력 입구" class="sec9-printer-slot-img">
+            
+            <!-- RECEIPT CLIP VIEWPORT AT BOTTOM EDGE OF SLOT -->
+            <div class="sec9-receipt-clip-viewport">
+              
+              <!-- RECEIPT PAPER SLIDING DOWNWARDS WITH PRE-ENTERED CONTENT -->
+              <div class="sec9-receipt-paper-wrapper" id="sec9-receipt-paper">
+                
+                <!-- RECEIPT SVG PAPER BACKGROUND (9-receipt.svg) -->
+                <img src="assets/9-receipt.svg" alt="영수증 용지" class="sec9-receipt-bg-img">
+
+                <!-- RECEIPT INNER CONTENT OVERLAY -->
+                <div class="sec9-receipt-content">
+                  
+                  <!-- SECTION 1: INSTAGRAM MAGAZINE -->
+                  <div class="sec9-receipt-group group-magazine">
+                    <h2 class="receipt-green-title">환경&amp;소비<br>인스타 매거진</h2>
+                    
+                    <div class="receipt-handle-container">
+                      <span class="handle-text">@jigu.jeogu</span>
+                    </div>
+
+                    <!-- ONLY CLICKABLE ITEM: JIGUGEOJU GREEN RECTANGLE BOX -->
+                    <a href="https://www.instagram.com/jigu.jeogu/" target="_blank" rel="noopener noreferrer" class="receipt-green-box-link" title="지구저구 인스타그램 바로가기">
+                      <div class="receipt-green-box">
+                        <span class="green-box-text">지구저구가 전하는<br>최근 환경&amp;소비 확인해보세요</span>
+                        <span class="green-box-arrow">▶</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <!-- SECTION 2: CONTACT EMAIL -->
+                  <div class="sec9-receipt-group group-contact">
+                    <h3 class="receipt-contact-title">CONTACT</h3>
+                    
+                    <div class="receipt-email-container">
+                      <span class="email-text">jigujeogu@gmail.com</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================================
+           LOWER SECTION: PAGE 10 (CHROME EXTENSION DOWNLOAD & TICKER ICONS)
+           =================================================================== -->
+      <section class="combined-sec10-lower">
+        
+        <!-- 1. TOP WHITE TITLE TEXT -->
+        <div class="sec10-top-title-section">
+          <h2 class="sec10-main-title">지구저구 확장프로그램: 충동구매 방지턱</h2>
+        </div>
+
+        <!-- 2. STAGE SECTION WITH BACKGROUND ICON CONVEYOR + TOP DOWNLOAD BUTTON -->
+        <div class="sec10-stage-section">
+          
+          <!-- BACKGROUND TICKER ICON TRACK (MOVING LEFT TO RIGHT WITH TICK-TOCK STEPS) -->
+          <div class="sec10-icon-ticker-wrapper">
+            <div class="sec10-icon-track" id="sec10-icon-track">
+              <!-- REPEATING ICON SET 1 -->
+              <div class="sec10-icon-set">
+                <img src="assets/10_1.svg" alt="아이콘1" class="sec10-icon-item">
+                <img src="assets/10_2.svg" alt="아이콘2" class="sec10-icon-item">
+                <img src="assets/10_3.svg" alt="아이콘3" class="sec10-icon-item">
+                <img src="assets/10_4.svg" alt="아이콘4" class="sec10-icon-item">
+                <img src="assets/10_5.svg" alt="아이콘5" class="sec10-icon-item">
+                <img src="assets/10_6.svg" alt="아이콘6" class="sec10-icon-item">
+              </div>
+              <!-- REPEATING ICON SET 2 -->
+              <div class="sec10-icon-set">
+                <img src="assets/10_1.svg" alt="아이콘1" class="sec10-icon-item">
+                <img src="assets/10_2.svg" alt="아이콘2" class="sec10-icon-item">
+                <img src="assets/10_3.svg" alt="아이콘3" class="sec10-icon-item">
+                <img src="assets/10_4.svg" alt="아이콘4" class="sec10-icon-item">
+                <img src="assets/10_5.svg" alt="아이콘5" class="sec10-icon-item">
+                <img src="assets/10_6.svg" alt="아이콘6" class="sec10-icon-item">
+              </div>
+              <!-- REPEATING ICON SET 3 -->
+              <div class="sec10-icon-set">
+                <img src="assets/10_1.svg" alt="아이콘1" class="sec10-icon-item">
+                <img src="assets/10_2.svg" alt="아이콘2" class="sec10-icon-item">
+                <img src="assets/10_3.svg" alt="아이콘3" class="sec10-icon-item">
+                <img src="assets/10_4.svg" alt="아이콘4" class="sec10-icon-item">
+                <img src="assets/10_5.svg" alt="아이콘5" class="sec10-icon-item">
+                <img src="assets/10_6.svg" alt="아이콘6" class="sec10-icon-item">
+              </div>
+            </div>
+          </div>
+
+          <!-- MAIN FOREGROUND INTERACTIVE DOWNLOAD BUTTON -->
+          <a href="https://chromewebstore.google.com/detail/%EC%B6%A9%EB%8F%99%EA%B5%AC%EB%A7%A4-%EB%B0%A9%EC%A7%80%ED%84%B1/ecdidmcioncgambjjngjbpchfkpngfgj" target="_blank" rel="noopener noreferrer" class="sec10-download-btn-link" title="지구저구 확장프로그램 다운로드받기">
+            <div class="sec10-download-btn-wrapper">
+              <img src="assets/10-download.svg" alt="지구저구 확장프로그램 다운로드" class="sec10-download-btn-img">
+            </div>
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  </div>
+
+  <script src="merged-script.js"></script>
+  <script>
+    (function() {
+      let idleTimer;
+      const idleTime = 20000; // 20 seconds
+
+      function resetTimer() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, idleTime);
+      }
+
+      window.addEventListener('load', resetTimer);
+      window.addEventListener('scroll', resetTimer, { passive: true });
+      window.addEventListener('touchstart', resetTimer, { passive: true });
+      window.addEventListener('touchmove', resetTimer, { passive: true });
+      window.addEventListener('mousemove', resetTimer, { passive: true });
+      window.addEventListener('mousedown', resetTimer, { passive: true });
+      window.addEventListener('keydown', resetTimer, { passive: true });
+      window.addEventListener('click', resetTimer, { passive: true });
+    })();
+  </script>
+</body>
+</html>

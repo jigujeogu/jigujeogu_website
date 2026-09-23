@@ -1,0 +1,857 @@
+--- /Users/jumjum22/Downloads/JIGUGEOJU_Pages/v3/style.css	2026-08-11 18:33:44
++++ /Users/jumjum22/Downloads/JIGUGEOJU_Pages/v4/style.css	2026-08-15 12:15:30
+@@ -28,12 +28,22 @@
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
++  
++  /* HIDE SCROLLBAR GLOBALLY */
++  scrollbar-width: none; /* Firefox */
++  -ms-overflow-style: none; /* IE and Edge */
+   font-synthesis: none;
+   overflow-x: hidden;
+   overflow-y: auto;
++}
++
++/* HIDE SCROLLBAR GLOBALLY FOR WEBKIT (Chrome, Safari, Edge Chromium) */
++::-webkit-scrollbar {
++  display: none;
+ }
+ 
+ /* 1. FULL-VIEWPORT STAGE (content stays at original pixel size, background extends to fill screen) */
++.mobile-br { display: none; }
+ .ipad-device-container {
+   width: 100%;
+   height: 1024px;
+@@ -1785,6 +1795,10 @@
+   object-fit: contain;
+ }
+ 
++.sec8-mobile-video-thumb {
++  display: none; /* Hidden by default on desktop */
++}
++
+ /* PLAY BUTTON VISIBLE BY DEFAULT, HIDDEN WHEN PLAYING */
+ .btn-play {
+   opacity: 1;
+@@ -2525,3 +2539,820 @@
+ .decor-dashed-line { clip-path: inset(0 100% 0 0); }
+ .decor-airplane { opacity: 0; }
+ .magnifier-inspecting-img { transform: translate(-39.5%, -45.5%) rotate(-3deg); }
++
++/* ===================================================================
++   MOBILE RESPONSIVE FOUNDATION
++   =================================================================== */
++@media (max-width: 768px) {
++  /* Unified page height on mobile */
++  .page-section {
++    height: 100svh !important;
++    min-height: 100svh !important;
++    max-height: 100svh !important;
++    overflow: hidden;
++  }
++  
++  /* Reset .ipad-device-container for mobile so it fits the section */
++  .page-section .ipad-device-container {
++    height: 100% !important;
++    min-height: 100% !important;
++    max-height: 100% !important;
++  }
++
++  /* Force page1 to also adopt the unified height on mobile, overriding index.html <style> block */
++  html body .page-section.page1-body .ipad-device-container,
++  html body .page-section.page1-body .ipad-screen-body {
++    height: 100% !important;
++    min-height: 100% !important;
++    max-height: 100% !important;
++  }
++
++  /* ==================== GLOBAL MOBILE HELPERS ==================== */
++  .mobile-br { display: block; }
++  .desktop-br { display: none !important; }
++  
++  /* Text Left Aligned, Subtitle bigger & heavier */
++  html body .page-section.page1-body .sub-title-text {
++    font-size: 17.5vw !important; /* Slightly smaller than 19vw */
++    font-weight: 800 !important;
++    line-height: 1.2 !important;
++    text-align: left !important;
++    white-space: normal !important;
++    margin-bottom: 12px !important; 
++    transform: translateY(16vh) !important; /* Moved UP further */
++  }
++  
++  html body .page-section.page1-body .main-title-text {
++    font-size: 15.5vw !important;
++    text-align: left !important;
++    white-space: nowrap !important;
++    transform: translateY(16vh) !important; /* Moved UP further */
++  }
++  
++  html body .page-section.page1-body .main-title-section {
++    display: flex;
++    flex-direction: column;
++    align-items: flex-start !important;
++    padding-left: 20px !important;
++    width: 100%;
++  }
++
++  /* Graphic + Jeogu anchored to BOTTOM and enlarged */
++  html body .page-section.page1-body .central-graphics-section {
++    flex: 1 !important;
++    margin-top: 5vh !important;
++    overflow: hidden; 
++  }
++  
++  html body .page-section.page1-body .props-illustration-wrapper {
++    width: 160% !important; /* Graphic bigger, crop sides */
++    max-width: none !important;
++    left: 50% !important;
++    transform: translateX(-50%) !important;
++  }
++
++  html body .page-section.page1-body .bottom-green-rectangle {
++    position: static !important;
++    border-top-width: 1px !important; /* Stroke thinner */
++    height: 125px !important; /* Green floor shorter */
++  }
++
++  /* Reset parent positioning to align logo and buttons exactly */
++  html body .page-section.page1-body .top-title-overlay,
++  html body .page-section.page1-body .ipad-header {
++    position: static !important;
++    padding: 0 !important;
++    margin: 0 !important;
++  }
++
++  html body .page-section.page1-body .header-logo-container {
++    position: absolute !important;
++    top: 25px !important; /* Exact same top */
++    left: 20px !important;
++    margin: 0 !important;
++    z-index: 100 !important;
++    display: flex !important;
++    align-items: flex-start !important;
++  }
++
++  /* Logo even smaller */
++  html body .page-section.page1-body .header-logo-img {
++    height: 14px !important; 
++    transform: translateY(0) !important;
++  }
++
++  html body .page-section.page1-body .nav-buttons-group {
++    position: absolute !important;
++    top: 25px !important; /* Exact same top */
++    right: 20px !important;
++    margin: 0 !important;
++    z-index: 100 !important;
++    display: flex !important;
++    flex-direction: column !important;
++    gap: 6px !important;
++    align-items: flex-end !important;
++  }
++
++  /* Button radius lower, padding reduced */
++  html body .page-section.page1-body .nav-round-btn {
++    font-size: 10px !important;
++    padding: 3px 6px !important; /* Inner padding reduced */
++    height: auto !important;
++    line-height: 1.1 !important;
++    border-width: 1.5px !important;
++    border-radius: 4px !important; 
++  }
++
++  /* ==================== PAGE 2 MOBILE LAYOUT ==================== */
++  
++  html body .page-section.page2-body .desktop-only { display: none !important; }
++  html body .page-section.page2-body p.mobile-only { display: block !important; }
++  html body .page-section.page2-body div.mobile-only { display: flex !important; }
++
++  html body .page-section.page2-body .sec2-sub-headline {
++    font-size: 9vw !important; /* Reduced to 9vw */
++    padding: 0 10px;
++
++    text-align: center;
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++    white-space: normal !important;
++    line-height: 1.25 !important;
++  }
++  
++  /* Mobile Two-Line Highlight Text */
++  html body .page-section.page2-body .sec2-highlight-text-wrapper-mobile {
++    flex-direction: column;
++    align-items: center;
++    gap: 12px;
++    padding: 15px 0 !important;
++    width: 100%;
++    transform: translateY(-15px) !important; /* Move heading group UP slightly */
++  }
++
++  html body .page-section.page2-body .sec2-highlight-line-wrapper {
++    position: relative;
++    display: inline-flex;
++    justify-content: center;
++    align-items: center;
++    padding: 5px 25px;
++  }
++
++  html body .page-section.page2-body .sec2-underline-img-mobile {
++    position: absolute;
++    top: 50%;
++    left: 50%;
++    transform: translate(-50%, -50%);
++    width: 100%;
++    height: 100%;
++    object-fit: fill;
++    z-index: 1;
++    pointer-events: none;
++  }
++  
++  html body .page-section.page2-body .underline-top {
++    transform: translate(-50%, -35%) !important; /* Nudged UP slightly */
++  }
++  
++  html body .page-section.page2-body .underline-bottom {
++    transform: translate(-50%, -60%) !important;
++  }
++
++  html body .page-section.page2-body .sec2-main-headline-text-mobile {
++    position: relative;
++    z-index: 2;
++    font-family: var(--font-main);
++    font-size: 7vw !important;
++    font-weight: 700 !important;
++    color: #0F1811;
++    letter-spacing: -0.02em;
++    white-space: nowrap;
++  }
++
++  /* Description text smaller + word wrapping */
++  html body .page-section.page2-body .sec2-info-line {
++    font-size: 13px !important;
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++    white-space: normal !important;
++    line-height: 1.4 !important;
++  }
++  
++  html body .page-section.page2-body .highlight-green-box {
++    padding: 2px 6px !important;
++  }
++
++  /* White box inner padding reduced */
++  html body .page-section.page2-body .sec2-info-card-overlay {
++    padding: 8px 8px !important; /* Reduced side padding */
++    width: 90% !important;
++    top: calc(75vh + 100px) !important; /* Moved DOWN by 15px more */
++    bottom: auto !important;
++    border-width: 2px !important; /* Slightly thicker stroke */
++  }
++
++  /* Earth + Trash Graphics */
++  html body .page-section.page2-body .sec2-graphics-wrapper {
++    overflow: visible !important; /* Allow earth to render fully (no clipping) */
++    max-height: 60vh !important; /* Increased height to fit full earth */
++    align-items: flex-start !important;
++    margin-top: 25vh !important;
++  }
++
++  html body .page-section.page2-body .sec2-graphics-inner-group {
++    transform: scale(0.6) !important;
++    transform-origin: center top !important;
++    margin-bottom: 0 !important;
++  }
++  
++  html body .page-section.page2-body .sec2-earth-container {
++    transform: translateY(-183px) scale(0.9) !important; /* Moved DOWN by 20px */
++    transform-origin: center center !important;
++  }
++  
++  html body .page-section.page2-body .trash-pile-left {
++    width: 1200px !important; /* Enlarge base width to match trash1 (trash-pile-right) */
++    transform: scale(1.1) translateY(-115px) !important; /* Moved DOWN by 30px more */
++    transform-origin: left top !important;
++    left: -755px !important; /* Moved RIGHT by 20px */
++  }
++  
++  html body .page-section.page2-body .trash-pile-right {
++    transform: scale(1.1) translateY(-156px) !important; /* Moved DOWN by 9px */
++    transform-origin: right top !important;
++    right: -760px !important; /* Moved RIGHT by 10px */
++  }
++
++  /* ==================== PAGE 3 MOBILE LAYOUT ==================== */
++  
++  /* 0. Fix Section Height (Allow natural scrolling with main page, remove nested scroll) */
++  html body .page-section.page3-body {
++    height: auto !important;
++    min-height: 100svh !important;
++    max-height: none !important;
++    overflow: visible !important;
++  }
++  html body .page-section.page3-body .ipad-device-container,
++  html body .page-section.page3-body .page3-screen-body {
++    height: auto !important;
++    min-height: 100% !important;
++    max-height: none !important;
++    overflow: visible !important;
++  }
++
++  /* 1. Title wrapping and position */
++  html body .page-section.page3-body .sec3-top-section {
++    transform: translateY(-45px) !important; /* Moved DOWN by 10px */
++  }
++
++  html body .page-section.page3-body .sec3-main-title {
++    word-break: keep-all !important;
++    white-space: normal !important;
++    overflow-wrap: break-word !important;
++    padding: 0 20px !important;
++  }
++
++  /* 2. 3-img.svg BIGGER (fill width) + Moved UP */
++  html body .page-section.page3-body .sec3-image-wrapper {
++    width: 140vw !important; /* Made even bigger */
++    max-width: none !important;
++    margin-left: calc(-70vw + 50%) !important;
++    margin-right: calc(-70vw + 50%) !important;
++    transform: translateY(-45px) !important; /* Moved UP by 10px more */
++  }
++  
++  html body .page-section.page3-body .sec3-hero-img {
++    width: 100% !important;
++    height: auto !important;
++    object-fit: cover !important;
++  }
++
++  /* 3. BOXES — horizontal -> VERTICAL stack */
++  html body .page-section.page3-body .sec3-cards-container {
++    flex-direction: column !important;
++    align-items: center !important;
++    gap: 20px !important;
++  }
++
++  html body .page-section.page3-body .problem-card {
++    width: 100% !important;
++    max-width: 320px !important;
++    flex: none !important;
++    min-height: 0 !important; /* Shrink to fit content */
++    height: auto !important;
++    border-width: 1.5px !important; /* Thinner stroke */
++    border-radius: 12px !important; /* Lower border-radius more */
++  }
++
++  /* Number badges smaller */
++  html body .page-section.page3-body .card-number-badge {
++    width: 24px !important;
++    height: 24px !important;
++    top: -12px !important;
++    left: 12px !important;
++    font-size: 12px !important;
++    line-height: 24px !important;
++  }
++
++  html body .page-section.page3-body .card-header-green {
++    padding: 15px 15px 10px 15px !important; /* Equal left/right padding */
++    border-top-left-radius: 10px !important;
++    border-top-right-radius: 10px !important;
++  }
++
++  html body .page-section.page3-body .card-body-white {
++    padding: 10px 15px !important; /* Tighter top/bottom padding */
++    border-bottom-left-radius: 10px !important;
++    border-bottom-right-radius: 10px !important;
++  }
++
++  html body .page-section.page3-body .card-title {
++    font-size: 15px !important; /* Smaller subtitle */
++  }
++
++  /* 4. DESCRIPTION text in boxes - mobile body size & word wrap */
++  html body .page-section.page3-body .card-content {
++    font-size: 14px !important;
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++    white-space: normal !important;
++    line-height: 1.4 !important;
++  }
++
++  /* 5. MOTION GRAPHICS overlapping the image, boxes below */
++  html body .page-section.page3-body .sec3-decorations-row {
++    order: -1 !important; /* Move above the cards */
++    margin-top: -60px !important; /* Overlap with the image above it */
++    transform: scale(0.35) translateY(90px) !important; /* Moved DOWN 15px more */
++    margin-bottom: 20px !important;
++  }
++
++  /* ==================== PAGE 4 MOBILE LAYOUT ==================== */
++  
++  /* 4. TITLE wrapping and position */
++  html body .page-section.page4-body .sec4-top-section {
++    transform: translateY(-100px) !important; /* Move title DOWN by 50px (was -150px) */
++  }
++
++  html body .page-section.page4-body .sec4-main-title {
++    word-break: keep-all !important;
++    white-space: normal !important;
++    overflow-wrap: break-word !important;
++    padding: 0 20px !important;
++  }
++
++  /* 3. "SDGs: ~~" text — smaller */
++  html body .page-section.page4-body .sec4-sub-title {
++    font-size: 16px !important;
++    word-break: keep-all !important;
++    white-space: normal !important;
++    margin-top: 10px !important;
++  }
++
++  /* Stack Deck and Dots vertically, and move them UP */
++  html body .page-section.page4-body .sec4-cards-section {
++    flex-direction: column !important;
++    align-items: center !important;
++    justify-content: center !important;
++    margin-top: 30px !important;
++    transform: translateY(-85px) !important; /* Move cards UP slightly */
++  }
++
++  /* 1. VERTICAL VALUE GRAPHICS (mobile-specific versions) */
++  html body .page-section.page4-body .card-yellow .value-card-img {
++    content: url("assets/4-value1-1.svg") !important;
++  }
++  html body .page-section.page4-body .card-blue .value-card-img {
++    content: url("assets/4-value2-1.svg") !important;
++  }
++  html body .page-section.page4-body .card-pink .value-card-img {
++    content: url("assets/4-value3-1.svg") !important;
++  }
++
++  html body .page-section.page4-body .sec4-card-deck {
++    width: 82vw !important; /* Reduced graphic size to prevent bottom cutoff */
++    max-width: 340px !important;
++    margin-left: 0 !important;
++    margin-right: 0 !important;
++    height: auto !important;
++    aspect-ratio: 181 / 254 !important; /* Aspect ratio of vertical SVG */
++    flex: none !important;
++  }
++  
++  html body .page-section.page4-body .value-card-img {
++    object-fit: contain !important;
++  }
++
++  /* 2. DOT INDICATORS — smaller + below the graphic */
++  html body .page-section.page4-body .sec4-dots-container {
++    flex-direction: row !important;
++    margin-left: 0 !important;
++    margin-top: 10px !important; /* Move dots UP slightly */
++    gap: 12px !important;
++  }
++
++  html body .page-section.page4-body .indicator-dot {
++    width: 8px !important;
++    height: 8px !important;
++    border-width: 1.5px !important; /* Slightly thicker stroke */
++  }
++
++  /* ==================== PAGE 5 MOBILE LAYOUT ==================== */
++
++  /* 1. LOGO much smaller */
++  html body .page-section.page5-body .page5-main-logo {
++    width: 120px !important;
++    height: auto !important;
++  }
++  
++  html body .page-section.page5-body .page5-lens-logo {
++    width: 75px !important; /* Slightly smaller */
++    height: auto !important;
++    margin-bottom: 8px !important;
++    transform: translateY(-15px) !important; /* Move logo UP slightly */
++  }
++
++  /* 5. TITLE wrapping (sub text) */
++  html body .page-section.page5-body .page5-sub-text {
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++    font-size: 16px !important;
++    margin-top: 10px !important;
++  }
++
++  /* 2. DESCRIPTION text box — narrow width to fit circular magnifier */
++  html body .page-section.page5-body .page5-phase2-content {
++    max-width: 390px !important; /* Widen text box enough to prevent unwanted wrapping of long lines */
++    margin: 0 auto !important;
++  }
++
++  html body .page-section.page5-body .page5-body-text {
++    font-size: 13px !important;
++    line-height: 1.8 !important; /* Increased line-height more */
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++  }
++  
++  html body .page-section.page5-body .page5-body-text p {
++    margin-bottom: 8px !important;
++  }
++
++  /* Move text content UP slightly */
++  html body .page-section.page5-body .page5-center-content {
++    top: calc(50% - 20px) !important;
++  }
++  
++  /* Move phase 1 content UP slightly more */
++  html body .page-section.page5-body .page5-phase1-content {
++    top: calc(50% - 40px) !important;
++  }
++
++  /* Move magnifier overlay DOWN and LEFT slightly to center the lens */
++  html body .page-section.page5-body .page5-magnifier-overlay {
++    top: 20px !important; /* Moved DOWN by 25px (was -5px) */
++    left: -10px !important; /* Moved RIGHT 5px (was -15px) */
++  }
++
++  /* 3. MAGNIFIER graphic — swap to new handle version, much smaller */
++  html body .page-section.page5-body .magnifier-inspecting-img {
++    content: url("assets/5-glass3-1.svg") !important; /* Swap to new graphic on mobile */
++    width: 135vw !important; /* Size slightly reduced */
++    height: auto !important;
++    max-width: none !important;
++  }
++
++  /* 4. MOTION ICON graphics — slightly bigger + repositioned inward */
++  html body .page-section.page5-body .icon-all-1 { top: 8% !important; left: 6% !important; width: 50px !important; }
++  html body .page-section.page5-body .icon-all-2 { top: calc(75% - 17px) !important; left: 8% !important; width: 55px !important; } /* 5-icon2-1 move up 15px */
++  html body .page-section.page5-body .icon-all-3 { bottom: calc(10% - 30px) !important; left: 12% !important; width: 52px !important; } /* 5-icon2-2 move down 30px */
++  html body .page-section.page5-body .icon-all-4 { top: 12% !important; right: 6% !important; width: 50px !important; }
++  html body .page-section.page5-body .icon-all-5 { bottom: 12% !important; right: 10% !important; width: 52px !important; }
++
++  /* ==================== PAGE 6 ==================== */
++  /* 1. SIGN graphic bigger + swapped to handle version + Positioned from TOP */
++  html body .page-section.page6-body .page6-main-graphic-layer {
++    bottom: auto !important;
++    top: 50px !important; /* ~50px from the top */
++    transform: translateX(calc(-50% + 6px)) !important; /* Move right by additional 3px */
++  }
++  
++  html body .page-section.page6-body .main-sign-img {
++    content: url("assets/6-sign3.svg") !important;
++    width: 85vw !important; /* Reduced size slightly */
++    max-width: none !important;
++  }
++
++  /* 2. Clouds + truck anchored to the bottom */
++  html body .page-section.page6-body .truck-assembly {
++    zoom: 1.05 !important; /* Reduce truck size */
++    bottom: -12px !important; /* Sink further to ensure tires are flush on the bottom */
++  }
++  html body .page-section.page6-body .cloud-img {
++    bottom: -50px !important; /* Sink more due to enlargement to remove empty cut-off gap */
++  }
++
++  /* 3 & 4. Clouds — Enlarge ~3x, swap graphics, out of sync */
++  @keyframes cloudDriftMobileBack {
++    0%   { transform: translateX(calc(-100% - 150vw)); }
++    100% { transform: translateX(250vw); }
++  }
++  @keyframes cloudDriftMobileFront {
++    0%   { transform: translateX(calc(-100% - 120vw)); }
++    100% { transform: translateX(200vw); }
++  }
++
++  /* Back clouds: use narrow graphic, 50s cycle */
++  html body .page-section.page6-body .cloud-back-1,
++  html body .page-section.page6-body .cloud-back-2 {
++    content: url("assets/6-cloud1-1.svg") !important;
++    animation: cloudDriftMobileBack 50s linear infinite !important;
++  }
++  html body .page-section.page6-body .cloud-back-1 { width: 960px !important; animation-delay: 0s !important; }
++  html body .page-section.page6-body .cloud-back-2 { width: 840px !important; animation-delay: -25s !important; }
++
++  /* Front clouds: use narrow graphic, 38s cycle (out of sync with back) */
++  html body .page-section.page6-body .cloud-front-1,
++  html body .page-section.page6-body .cloud-front-2 {
++    content: url("assets/6-cloud2-1.svg") !important;
++    animation: cloudDriftMobileFront 38s linear infinite !important;
++  }
++  html body .page-section.page6-body .cloud-front-1 { width: 750px !important; animation-delay: -8s !important; }
++  html body .page-section.page6-body .cloud-front-2 { width: 630px !important; animation-delay: -27s !important; }
++
++  /* 5. TITLE wrapping (if any heading/text is added to page6 in HTML) */
++  html body .page-section.page6-body h1,
++  html body .page-section.page6-body h2,
++  html body .page-section.page6-body p {
++    word-break: keep-all !important;
++    overflow-wrap: break-word !important;
++  }
++
++  /* ==================== PAGE 7 ==================== */
++  /* 0. Stack elements at top to fix spacing so arrows can reach the header */
++  html body .page-section.page7-body .page7-screen-body {
++    justify-content: flex-start !important; 
++  }
++
++  /* 1. REMOVE MONITOR GRAPHIC & USE ONLY VIDEO + FIX OVERLAP */
++  html body .page-section.page7-body .sec7-monitor-section {
++    z-index: 200 !important; /* Force above header section to fix arrow clicks */
++  }
++  html body .page-section.page7-body .sec7-monitor-img {
++    display: none !important; /* Hide the monitor frame completely */
++  }
++  
++  html body .page-section.page7-body .sec7-monitor-wrapper {
++    zoom: 1 !important; 
++    width: 95vw !important; /* Enlarge the video more */
++    margin-top: -6px !important; /* Move video UP 20px (was 14px) */
++  }
++  
++  html body .page-section.page7-body .sec7-monitor-screen-clip {
++    position: relative !important;
++    top: 0 !important;
++    left: 0 !important;
++    width: 100% !important;
++    height: auto !important;
++    aspect-ratio: 732 / 384; 
++    mask-image: none !important; 
++    -webkit-mask-image: none !important;
++    border: 2px solid #000000 !important; 
++    border-radius: 3px !important;
++    overflow: hidden !important;
++  }
++
++  /* 2. DOTS match page4 (black border, white/black fill, smaller) */
++  html body .page-section.page7-body .sec7-dots-container {
++    gap: 12px !important;
++    margin-top: 40px !important; 
++    margin-bottom: 8px !important;
++  }
++  html body .page-section.page7-body .sec7-dot {
++    width: 8px !important;
++    height: 8px !important;
++    background-color: #FFFFFF !important;
++    border: 1.5px solid #000000 !important;
++    transform: none !important;
++  }
++  html body .page-section.page7-body .sec7-dot.active-dot {
++    background-color: #000000 !important;
++  }
++
++  /* 3. Move everything (title, subtitle box, etc) UP by 70px */
++  html body .page-section.page7-body .sec7-header-section {
++    margin-top: 70px !important; 
++    margin-bottom: 0px !important; 
++  }
++  html body .page-section.page7-body .sec7-main-title {
++    font-size: 8vw !important; 
++    margin-bottom: 20px !important; 
++  }
++
++  /* 4. Arrows flank subtitle box + smaller subtitle font */
++  html body .page-section.page7-body .sec7-subtitle-box {
++    max-width: none !important; 
++    width: auto !important;
++    padding: 4px 12px !important; 
++    min-height: auto !important; 
++    border-width: 2px !important; 
++    border-radius: 3px !important; 
++  }
++  html body .page-section.page7-body .sec7-subtitle-text {
++    font-size: 13.5px !important; 
++    line-height: 1.3 !important;
++    white-space: nowrap !important;
++  }
++  
++  /* FIXED ARROW CLICKS: Use background-image on a large 44x44 touch target */
++  html body .page-section.page7-body .sec7-nav-btn {
++    top: -36px !important; /* Move UP 3px (was -33px) */
++    width: 44px !important; /* Apple recommended minimum touch target */
++    height: 44px !important;
++    padding: 0 !important; 
++    margin: 0 !important; 
++    box-sizing: border-box !important;
++    cursor: pointer !important;
++    pointer-events: auto !important; /* Force click capability */
++    z-index: 1000 !important; /* Force above all overlays */
++    background-color: transparent !important;
++    border: none !important;
++    transform: none !important; /* Remove translateY(-50%) for precise absolute positioning */
++  }
++  html body .page-section.page7-body .btn-prev {
++    left: 6vw !important; 
++    background: url("assets/7-arrow-l-1.svg") center / 18px 18px no-repeat !important;
++  }
++  html body .page-section.page7-body .btn-next {
++    right: 6vw !important; 
++    background: url("assets/7-arrow-r-1.svg") center / 18px 18px no-repeat !important;
++  }
++  
++  /* Hide the original IMG tag inside the button because it breaks clicks on iOS Safari when swapped */
++  html body .page-section.page7-body .nav-arrow-img {
++    display: none !important; 
++  }
++
++  /* 6. Move Jeogu Mascot & Speech Bubble */
++  html body .page-section.page7-body .sec7-jeogu-wrapper {
++    width: 170px !important; 
++    bottom: -20px !important; 
++    left: 30px !important; 
++  }
++  html body .page-section.page7-body .sec7-speech-wrapper {
++    width: 290px !important; /* Widen the bubble to reduce text wrapping lines */
++    bottom: 80px !important; 
++    left: 20px !important; 
++  }
++  html body .page-section.page7-body .sec7-speech-bubble {
++    border-width: 2px !important; 
++    padding: 14px 18px !important; /* Balance inner padding */
++  }
++  html body .page-section.page7-body .sec7-speech-text {
++    /* Match the absolute text position to the new padding */
++    top: 14px !important;
++    bottom: 14px !important;
++    left: 18px !important;
++    right: 18px !important;
++  }
++  
++  /* 7. Jeogu Auto Idle Eye Movement (Mobile Only) */
++  @keyframes jeogu-idle-look {
++    0%, 100% { transform: translate(0, 0); }
++    15%, 25% { transform: translate(-2px, 0px); }
++    40%, 50% { transform: translate(1px, -1px); }
++    65%, 75% { transform: translate(2px, 1px); }
++    90% { transform: translate(0, 0); }
++  }
++  
++  @keyframes jeogu-idle-look-page1 {
++    0%, 100% { transform: translate(0, 0); }
++    15%, 25% { transform: translate(-5px, 0px); }
++    40%, 50% { transform: translate(2px, -3px); }
++    65%, 75% { transform: translate(4px, 2px); }
++    90% { transform: translate(0, 0); }
++  }
++  
++  #ipad-container-1 .left-pupil,
++  #ipad-container-1 .right-pupil {
++    animation: jeogu-idle-look-page1 3.5s infinite ease-in-out !important;
++  }
++  
++  html body .page-section.page7-body .left-pupil,
++  html body .page-section.page7-body .right-pupil {
++    animation: jeogu-idle-look 3.5s infinite ease-in-out !important;
++  }
++  
++  /* ===================================================================
++     PAGE 8 (Mobile Adjustments)
++     =================================================================== */
++  html body .page-section.page8-body {
++    overflow-x: hidden !important; /* Ensure no horizontal scrolling */
++  }
++  
++  html body .page-section.page8-body .page8-screen-body {
++    padding-left: 0 !important;
++    padding-right: 0 !important; /* Remove the 40px desktop padding that clips the graphic and causes white margins */
++  }
++  
++  html body .page-section.page8-body .sec8-top-section {
++    padding-left: 20px !important;
++    padding-right: 20px !important; /* Keep title from touching screen edges */
++  }
++  
++  html body .page-section.page8-body .sec8-main-title {
++    word-break: keep-all !important; /* Keep wrapping by word */
++  }
++  
++  html body .page-section.page8-body .sec8-graphic-stage {
++    overflow: hidden !important; 
++    width: 100% !important; /* Span full screen edge to edge */
++    display: block !important; 
++  }
++  
++  html body .page-section.page8-body .sec8-graphic-wrapper {
++    width: 125vw !important; /* Slightly reduced size */
++    max-width: none !important;
++    position: relative !important;
++    left: 50% !important;
++    transform: translateX(calc(-50% + 10px)) !important; /* Absolute mathematical centering, moved right by 10px */
++    margin: 0 !important; 
++    margin-top: 120px !important; /* Moved DOWN by 100px (20px -> 120px) */
++  }
++
++  }
++
++  /* ===================================================================
++     PAGE 9 & 10 (Mobile Adjustments)
++     =================================================================== */
++  html body .page-section.page9-10-body .ipad-device-container {
++    height: 100% !important;
++    min-height: 100% !important;
++    max-height: 100% !important; /* Restore 100vh lock to prevent clipping issues with parent */
++  }
++
++  html body .page-section.page9-10-body .page9-10-screen-body {
++    height: 100% !important;
++    min-height: 100% !important;
++    overflow-x: hidden !important;
++    background-color: #15BE29 !important; /* Fill entire background with green */
++    position: relative !important; /* Context for absolute positioning of the black block */
++  }
++
++  html body .page-section.page9-10-body .sec9-main-title {
++    word-break: keep-all !important; /* Keep wrapping by word */
++    font-size: 2.1rem !important; /* Smaller title on mobile */
++  }
++  
++  html body .page-section.page9-10-body .sec10-top-title-section {
++    margin-bottom: 0 !important; /* Remove desktop default margin to bring text closer to button */
++  }
++
++  html body .page-section.page9-10-body .sec10-main-title {
++    word-break: keep-all !important;
++    font-size: 18px !important;
++    font-weight: 600 !important;
++    margin-top: 8px !important; /* Minimal space above */
++    margin-bottom: 8px !important; /* Very close to the download button */
++  }
++
++  html body .page-section.page9-10-body .combined-sec9-upper {
++    height: 100% !important; /* Fill space */
++    padding-bottom: 150px !important; /* Adjusted safe space for the even shorter absolute-positioned black block */
++  }
++
++  html body .page-section.page9-10-body .sec9-printer-slot-wrapper {
++    transform: scale(0.62) !important; /* Reduced receipt graphic overall */
++    transform-origin: top center !important;
++  }
++  
++  /* Extra adaptive scaling for short phones to prevent overlap with download button */
++  @media (max-height: 750px) {
++    html body .page-section.page9-10-body .sec9-printer-slot-wrapper {
++      transform: scale(0.55) !important;
++    }
++  }
++  
++  @media (max-height: 680px) {
++    html body .page-section.page9-10-body .sec9-printer-slot-wrapper {
++      transform: scale(0.5) !important;
++    }
++  }
++
++  html body .page-section.page9-10-body .combined-sec10-lower {
++    position: absolute !important; /* Unshackle from normal flow */
++    bottom: 0 !important; /* Anchor exactly to the bottom of the screen */
++    left: 0 !important;
++    width: 100% !important;
++    height: auto !important; /* Let it wrap its content naturally */
++    padding: 6px 0 !important; /* Minimal padding to make box shorter */
++    margin-top: 0 !important;
++  }
++
++  html body .page-section.page9-10-body .sec10-download-btn-wrapper {
++    width: 260px !important; /* Smaller download button on mobile */
++  }
++
++  html body .page-section.page9-10-body .sec10-icon-item {
++    height: 65px !important; /* Reduced ticker icon size on mobile */
++  }
++}

@@ -1,0 +1,8 @@
+<svg width="780" height="614" viewBox="0 0 780 614" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Monitor Head Screen Frame (Width 780, Height 432, 24px equal margins) -->
+  <rect width="780" height="432" rx="28" fill="#000000"/>
+  <!-- Extended Monitor Neck (Stem Height Extended from 112px to 160px) -->
+  <rect x="330" y="424" width="120" height="160" fill="#000000"/>
+  <!-- Monitor Stand Base (Y: 580px) -->
+  <rect x="220" y="580" width="340" height="34" rx="10" fill="#000000"/>
+</svg>
